@@ -4,7 +4,7 @@ class Banco extends PDO{
     //conectando com o banco de dados
     public function __construct(){
     
-        $this->conn = new PDO("mysql:host=127.0.0.1;dbname=celke", "root", "");
+        $this->conn = new PDO("mysql:host=127.0.0.1;dbname=php7", "root", "");
                     
     }
     //passando parametros 
