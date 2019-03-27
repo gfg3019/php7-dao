@@ -108,6 +108,7 @@ class Usuario{
             $this->setData($results[0]);
         }
     }
+    //método para alterar os dados do usuario
     public function update($login, $password){
         $this->setDeslogin($login);
         $this->setDessenha($password);
@@ -117,6 +118,17 @@ class Usuario{
             ':PASSWORD'=>$this->getDessenha(),
             ':ID'=>$this->getIdusuario()
         ));
+    }
+    //deletando o registro
+    public function delete(){
+        $sql = new Banco();
+        $sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
+            ':ID'=>$this->getIdusuario()
+        ));
+        $this->setIdusuario(0);
+        $this->setDeslogin("");
+        $this->setDessenha("");
+        $this->setDtcadastro(new DateTime());
     }
     public function __toString()
     {

@@ -22,8 +22,14 @@ $aluno = new Usuario("kenzo", "jid343");
 $aluno->insert();
 echo $aluno;*/
 
+/* alterando um registro
 $usuario = new Usuario();
 $usuario->loadById(3);
 $usuario->update("kenzinho","sdfghjhgfd");
+echo $usuario;*/
+
+$usuario = new Usuario();
+$usuario->loadById(1);
+$usuario->delete();
 echo $usuario;
 ?>
